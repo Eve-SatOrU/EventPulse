@@ -26,3 +26,5 @@ const Event = sequelize.define('Event', {
 Event.belongsTo(User, { foreignKey: 'userId' });
  module.exports = Event;
  
+
+//  add image later
