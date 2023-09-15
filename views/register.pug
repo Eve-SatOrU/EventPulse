@@ -1,0 +1,24 @@
+main
+article            
+  section.section.upcoming#packages(aria-labelledby="upcoming-label")
+    .container
+    .from-register 
+      if error
+        .red
+          .alert.alert-danger= error
+
+      form(action="/register", method="post")
+        h2 Register
+        label.label(for="userName") Full Name
+        input.box(type="text", name="userName", placeholder="Type your Full Name", required)#userName
+        label.label(for="email") Email
+        input.box(type="email", name="email", placeholder="Type your email", required)#email
+        label.label(for="userPassword") Password
+        .password-container
+          input.box(type="password", name="userPassword", placeholder="Type your password", required)#userPassword
+          label.password-label
+            input#showPassword(type="checkbox")
+        button.btn.center(type="submit") Register
+        br
+        a(href="/login")
+          p.link1 Already have an account?

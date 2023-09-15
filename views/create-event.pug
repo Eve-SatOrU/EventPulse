@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Create Event
+  body
+    h1 Create Event
+    if error
+      p.error= error
+    form(action='/create', method='post')
+      label(for='name') Event Name:
+      input(type='text', name='name', id='name', required)
+      label(for='date') Event Date:
+      input(type='date', name='date', id='date', required)
+      label(for='location') Event Location:
+      input(type='text', name='location', id='location')
+      label(for='description') Event Description:
+      textarea(name='description', id='description')
+      button(type='submit') Create Event
+
+    a(href="/events") Back to Event List
+    

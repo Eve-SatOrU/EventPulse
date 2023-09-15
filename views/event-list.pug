@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body 
+        each event in events
+            h1
+                a(href=`/event/${event.id}`) #{event.name}
+            h1 #{event.name}
+            p Location: #{event.location}
+            p Date: #{event.date}
+            p Description: #{event.description}
+            //- a(href=`/event/${event.id}/edit`) Edit Event
+
+            //- h2 Guestbook
+            //- each entry in guestbookEntries
+            //- p #{entry.name}: #{entry.comment} #{entry.emoji}

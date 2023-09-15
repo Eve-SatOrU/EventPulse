@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Update Event
+  body
+    h1 Update Event
+    form(action=`/event/${event.id}/update`, method='post')
+      label(for='name') Event Name:
+      input(type='text', name='name', value=event.name, required)
+      label(for='date') Event Date:
+      input(type='date', name='date', value=event.date, required)
+      label(for='location') Event Location:
+      input(type='text', name='location', value=event.location, required)
+      label(for='description') Event Description:
+      textarea(name='description', required)
+        | #{event.description}
+      button(type='submit') Update Event
+      

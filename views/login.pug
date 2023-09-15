@@ -1,0 +1,44 @@
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/Login-SignUp-btn.css">
+    <link rel="stylesheet" href="/css/info-containers.css">
+    link(rel="stylesheet", href="/css/nav.css")
+    <link rel="stylesheet" href="/css/login-signUp.css">
+    <link rel="stylesheet" href="/css/login.css">
+    title Document
+  body
+   nav
+      ul
+        img(src="/images/QuickLink.png", alt="")
+        li Home
+        li Contact
+        li.login login
+        li.signUp Sign Up
+   section.section
+    section.container
+      section.img-sec
+        img(src="/images/login.png", alt="loginImage")
+      section.login-sec
+        form(action="/login", method="post")
+          h2
+            span Login 
+            | to Your Account
+          p
+            | Unlock the magic of your account by entering your credentials below.
+          div.username-container
+            label.label(for="userName")
+              img(src="/images/account.png", alt="")
+            input.box(type="text", name="userName", placeholder="Email or Username", required, id="userName")
+          div.password-container
+            label
+              img(src="/images/password.png", alt="")
+            input.box(type="password", name="userPassword", placeholder="Password", required, id="userPassword")
+            label.password-label
+              input(type="checkbox", id="showPassword")
+          button.btn(type="submit") Login
+        p.no-account
+          | Dont you have an account ? 
+          a(href="/register") Sign up

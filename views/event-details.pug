@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body 
+        //- each event in events
+            //- a(href='/event/#{event.id}') #{event.name}
+            //- // views/event-details.pug
+            //- // Event details and guestbook
+            h1 #{event.name}
+            p Location: #{event.location}
+            p Date: #{event.date}
+
+        h2 Guestbook
+        each entry in guestbook
+            p #{entry.name}: #{entry.comment} #{entry.emoji}
+        a(href='/events') Back to Event List
+
+        form(action=`/event/${event.id}/guestbook`, method='post')
+            if user
+                input(type='text', name='name', placeholder='Name', value=user.userName, readonly)
+            input(type='text', name='comment', placeholder='Comment')
+            input(type='text', name='emoji', placeholder='Emoji')
+            button(type='submit') Add Entry
